@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta property="og:title" content="ワンドロ支援 お題生成つーる">
+	<meta property="og:description" content="ワンドロ用などにお題を生成するツールです">
+	<meta property="og:url" content="https://stok33.github.io/onedrodai">
+	<meta property="og:type" content="website">
+	
+    <title>ワンドロ支援 お題生成つーる</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.5;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        textarea {
+            width: 100%;
+            box-sizing: border-box;
+            height: 200px;
+            padding: 10px;
+            font-size: 16px;
+            resize: none;
+        }
+		  #odaiDisplay {
+            margin-top: 20px;
+            font-size: 24px; /* お題の文字を大きくする */
+            font-weight: bold; /* お題の文字を太字にする */
+        }
+		  #resetButton {
+            margin-top: 10px;
+            padding: 5px 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ワンドロ支援 お題生成つーる</h1>
+        同じお題は1度しか出ないようになっています。
+        <br>「〇〇キャラ全員描く」みたいなのにもどうぞ。
+		  <br><button onclick="loadodaiFromFile('touhouchara.txt')">東方キャラ名前リスト</button>
+        <button onclick="loadodaiFromFile('touhouexchara.txt')">旧作キャラ+α名前リスト</button>
+        <textarea id="inputodai" placeholder="お題リストをスペース(全角/半角両方可)で区切って入力"></textarea>
+        <button onclick="odaiclick()">お題な〜んだ</button>
+        <p id="odaiDisplay">
+         
+		  <br>
+		  </p>
+		  <button id="resetButton" onclick="confirmReset()">りせっと</button>
+    </div>
+    <div style="padding: 20px">
+    <hr>
+    <br>
+	 	<li>自分用に東方キャラ(獣王園まで)と旧作キャラ+α(ジャケ子とか)はリストを作ってあるのでボタンを押すだけで入力されます。
+		<br >微妙なキャラはいなかったりしますので適宜追加削除してください。特に+αの方は自分の趣味が強いです。
+        <li>ワンドロ支援と称していますが、別に1日ごとにお題が出るとかの機能はありません。<br>「お題な〜んだ」を押すとどんどん次のお題が出てしまうのでご注意ください。
+        <br>そのかわり1日何回でもワンドロできます。やったね
+        <li>一度ボタンを押すと追加削除をしても全部のお題が出るまでは反映されません。<br>新キャラが出た時などはお手数ですがお題が回るまで待つかリセットしてください。
+	<br> 
+	<a href="https://github.com/stok33/onedrodai">github</a></p>
+    </div>
+  <script src="main.js"></script>
+</body>
+</html>
+
