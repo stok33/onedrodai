@@ -35,10 +35,6 @@ function odaiclick() {
 }
 
 function generateodai() {
-    if (usedodai.length === 0) {
-        odaiDisplay.innerText = "すべてのお題が出ました。";
-        return;
-    }
 
     // ランダムにインデックスを選択
     const randomIndex = Math.floor(Math.random() * usedodai.length);
@@ -54,7 +50,7 @@ function generateodai() {
 }
 
 function resetodai() {
-            themes = []; // お題リストを空にする
+            odai = []; // お題リストを空にする
             usedodai = []; // 使用済みインデックスリストを空にする
             document.getElementById('inputodai').value = ''; // テキストエリアを空にする
             document.getElementById('odaiDisplay').innerText = '🌈 無に返しました。'; // メッセージを表示
